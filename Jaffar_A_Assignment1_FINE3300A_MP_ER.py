@@ -1,21 +1,35 @@
-#FINE3300A - Assignment #1
-#Adam Jaffar - 219564350
-#Description:
-# - Design a class called MortgagePayment
-# - Compute payment options (monthly, semi-monthly, bi-weekly, weekly, rapid bi-weekly, and rapid weekly)
-# - Class should be initialized with:
-#         - prevailing interest rate (Ex. quoted rate)
-#         - amortization period
-# - Create a method/function called payments that:
-#         - takes the principle amount and returns a tuple of the periodic payments, in the respective order as above
+# FINE3300A - Assignment #1
+# Adam Jaffar (219564350)
+#
+# Description:
+#   This assignment implements two main classes:
+#
+#   1. MortgagePayment
+#      - Computes payment options: monthly, semi-monthly,
+#        bi-weekly, weekly, rapid bi-weekly, rapid weekly
+#      - Initialized with quoted annual interest rate
+#        and amortization period (years)
+#      - Uses Present Value of Annuity (PVA) factor:
+#          PVA(r, n) = (1 - (1 + r)^-n) / r
+#        where r = periodic rate, n = number of periods
+#      - Note: Canadian fixed-rate mortgages are quoted 
+#        as semi-annually compounded rates
+#
+#   2. ExchangeRates
+#      - Reads a CSV file with exchange rate data
+#      - Locates the USD/CAD column
+#      - Uses the latest exchange rate in the file
+#      - Converts between USD and CAD based on user input
+#
+# Output:
+#   - Program prints formatted mortgage payments
+#   - Program converts amounts between USD and CAD
+#     and displays results clearly
+#
+# References:
+#   StackOverflow, Google, Lecture Slides, 
+#   The Python Book, AI (debugging help)
 
-# Formula for the PVA (Present Value of Annuity factor):
-#         - r = periodic rate, n = periods 
-#         - PVA(r, n) = (1 - (1 + r)^-n) / r
-
-# Note to self: Fixed rate mortages are quoted as semi-annually compounded rates
-
-# Refrences used: StackOverFlow, Google, Lecture Slides, The Python Book, AI for debugging
 
 class MortgagePayment:
     def __init__(self, quoted_rate: float, amortization_yrs: int):

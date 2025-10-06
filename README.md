@@ -4,7 +4,7 @@
 
 In this assignment, we tackle creating:
 
-1.  A Mortgage Payments class
+1. A Mortgage Payments class
 2. A Exchange Rate class
 3. Running the Program 
  
@@ -36,4 +36,4 @@ In this assignment, we tackle creating:
 
 
 ## Running the program
-![alt text](image-3.png)  
+![alt text](image-3.png)
